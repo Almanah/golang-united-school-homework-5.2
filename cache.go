@@ -36,7 +36,7 @@ func (c *Cache) Put(key, value string) {
 func (c *Cache) Keys() []string {
 	c.deleteExpiredKeys()
 
-	keys := make([]string, len(c.entries))
+	keys := make([]string, 0, len(c.entries))
 
 	for k := range c.entries {
 		keys = append(keys, k)
